@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
   # resources :users
+  resources :authorize, only: [:create, :destroy, :index, :show, :update]
 
   get     'users' => 'users#index'
   post    'users' => 'users#create'
