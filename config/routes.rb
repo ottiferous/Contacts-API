@@ -16,13 +16,13 @@ SampleApp::Application.routes.draw do
   delete  'users/:id' => 'users#destroy'
 
   #Contact Routes
-  get     'contact' => 'contact#index'
-  post    'contact' => 'contact#create'
-  get     'contact/new' => 'contact#new'
-  get     'contact/:id/edit' => 'user#edit'
-  get     'contact/:id' => 'contact#show'
-  patch   'contact/:id' => 'contact#update'
-  put     'contact/:id' => 'contact#update'
-  delete  'contact/:id' => 'contact#destroy'
+  get     'contacts' => 'contacts#index'
+  post    'contacts' => 'contacts#create'
+  get     'contacts/new' => 'contacts#new'
+  get     'contacts/:id/edit' => 'contacts#edit'
+  get     'contacts/:id' => 'contacts#show'
+  patch   'contacts/:id' => 'contacts#update'
+  put     'contacts/:id' => 'contacts#update'
+  delete  'contacts/:id' => 'contacts#destroy'
 
 end
