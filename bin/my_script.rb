@@ -5,19 +5,16 @@ url = Addressable::URI.new(
   scheme: 'http',
   host: 'localhost',
   port: 3000,
-  path: '/users/5'
+  path: '/users'
 ).to_s
 
-# params = { :id => 3 }
+make_user_url = Addressable::URI.new(
+    scheme: 'http',
+    host: 'localhost',
+    port: 3000,
+    path: '/users'
+  ).to_s
 
-# make_user_url = Addressable::URI.new(
-#     scheme: 'http',
-#     host: 'localhost',
-#     port: 3000,
-#     path: '/users'
-#   ).to_s
-#
-# params = { :user => { :name => "Gizmo", :email => "gizmo@gizmo.net"} }
+params = { :username => "Gizmo" }
 
-puts RestClient.delete(url)
-# puts RestClient.get(url)
+p RestClient.post(make_user_url, params)
