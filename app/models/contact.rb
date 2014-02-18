@@ -6,9 +6,7 @@ class Contact < ActiveRecord::Base
 
   belongs_to(
     :owner,
-    :class_name => 'user',
-    :primary_key => 'user_id',
-    :foreign_key => 'id'
+    :class_name => 'User'
   )
   has_many :contact_shares
 
