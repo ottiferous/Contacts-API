@@ -8,6 +8,16 @@ SampleApp::Application.routes.draw do
     get 'index', on: :member
   end
 
+  # Working on this
+  # resources :routes
+  #
+  # resources :contactshare do
+  #   member do
+  #     post 'contactshare/new'
+  #     delete 'contactshare/:id'
+  #   end
+  # end
+
   #User Routes
   get     '/'     => 'users#index'
   get     'index' => 'users#index'
@@ -34,6 +44,6 @@ SampleApp::Application.routes.draw do
   delete  'contacts/:id' => 'contacts#destroy'
 
   #ContactShare Routes
-  post    'contactshare/new' => 'contactshare#create'
-  delete  'contactshare/:id' => 'contactshare#destroy'
+  # post    'contactshare/new' => 'contactshare#create'
+  # delete  'contactshare/:id' => 'contactshare#destroy'
 end
