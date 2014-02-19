@@ -15,8 +15,11 @@ SampleApp::Application.routes.draw do
   put     'users/:id' => 'users#update'
   delete  'users/:id' => 'users#destroy'
 
+  #Nested Route(s)
+  get     'users/:user_id/contacts' =>  'contacts#index'
+
   #Contact Routes
-  get     'contacts' => 'contacts#index'
+  # get     'contacts' => 'contacts#index'
   post    'contacts' => 'contacts#create'
   get     'contacts/new' => 'contacts#new'
   get     'contacts/:id/edit' => 'contacts#edit'
