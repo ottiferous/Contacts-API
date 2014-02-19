@@ -3,6 +3,11 @@ SampleApp::Application.routes.draw do
 
   resources :authorize, only: [:create, :destroy, :index, :show, :update]
 
+  # Creates the /users/:id/contacts setup without all that typing.
+  resources :users do
+    get 'index', on: :member
+  end
+
   #User Routes
   get     '/'     => 'users#index'
   get     'index' => 'users#index'
