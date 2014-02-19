@@ -26,6 +26,6 @@ SampleApp::Application.routes.draw do
   delete  'contacts/:id' => 'contacts#destroy'
 
   #ContactShare Routes
-  get     'contactshare/new' => 'contactshare#create'
+  post    'contactshare/new' => 'contactshare#create'
   delete  'contactshare/:id' => 'contactshare#destroy'
 end

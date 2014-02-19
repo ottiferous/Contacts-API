@@ -82,9 +82,10 @@ delete_share_url = Addressable::URI.new(
   scheme: 'http',
   host: 'localhost',
   port: 3000,
-  path: '/contactshare/'
+  path: '/contactshare/6'
 ).to_s
 
-share_params = {contact_id: 3 user_id:1}
+share_params = {contact_id: 7, user_id: 1}
 
-puts RestClient.post(new_share_url, share_params)
+# puts RestClient.post(new_share_url, share_params)
+puts RestClient.delete(delete_share_url)
