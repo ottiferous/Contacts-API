@@ -9,14 +9,16 @@ SampleApp::Application.routes.draw do
   end
 
   # Working on this
-  # resources :routes
-  #
-  # resources :contactshare do
-  #   member do
-  #     post 'contactshare/new'
-  #     delete 'contactshare/:id'
-  #   end
-  # end
+  resources :contacts
+
+  get     'users/:user_id/contacts' =>  'contacts#index'
+
+  resources :contactshares do
+    member do
+      post 'contactshare/new'
+      delete 'contactshare/:id'
+    end
+  end
 
   #User Routes
   get     '/'     => 'users#index'
@@ -31,17 +33,17 @@ SampleApp::Application.routes.draw do
   delete  'users/:id' => 'users#destroy'
 
   #Nested Route(s)
-  get     'users/:user_id/contacts' =>  'contacts#index'
+
 
   #Contact Routes
   # get     'contacts' => 'contacts#index'
-  post    'contacts' => 'contacts#create'
-  get     'contacts/new' => 'contacts#new'
-  get     'contacts/:id/edit' => 'contacts#edit'
-  get     'contacts/:id' => 'contacts#show'
-  patch   'contacts/:id' => 'contacts#update'
-  put     'contacts/:id' => 'contacts#update'
-  delete  'contacts/:id' => 'contacts#destroy'
+  # post    'contacts' => 'contacts#create'
+  # get     'contacts/new' => 'contacts#new'
+  # get     'contacts/:id/edit' => 'contacts#edit'
+  # get     'contacts/:id' => 'contacts#show'
+  # patch   'contacts/:id' => 'contacts#update'
+  # put     'contacts/:id' => 'contacts#update'
+  # delete  'contacts/:id' => 'contacts#destroy'
 
   #ContactShare Routes
   # post    'contactshare/new' => 'contactshare#create'
